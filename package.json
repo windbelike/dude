@@ -1,0 +1,36 @@
+{
+  "name": "dude",
+  "version": "1.0.0",
+  "description": "TypeScript rewrite of learn-claude-code -- Harness Engineering for Real Agents",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/agents/harnessAgent.ts",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "agent",
+    "claude",
+    "harness",
+    "ai"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.13",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "zod": "^4.3.6"
+  }
+}
