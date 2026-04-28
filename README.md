@@ -2,7 +2,11 @@
 
 一个从 Claude Code 设计理念出发、用 TypeScript 手写的 **Harness Agent**（控制具智能体）。
 
-> 我们不调用 SDK，直接用原生 HTTP 访问 Anthropic Messages API；不依赖黑盒框架，所有模块自己掌控。
+> Prompt Engineering 解决「怎么问」。
+> Context Engineering 解决「怎么记录」。
+> Harness Engineering 解决「怎么管」。
+
+我们不调用 SDK，直接用原生 HTTP 访问 Anthropic Messages API；不依赖黑盒框架，所有模块自己掌控。
 
 ### HTTP API 极简解读
 
