@@ -2,9 +2,27 @@
 
 一个从 Claude Code 设计理念出发、用 TypeScript 手写的 **Harness Agent**（控制具智能体）。
 
-> 我们不调用 SDK，直接用原生 `fetch` 访问 Anthropic Messages API；不依赖黑盒框架，所有模块自己掌控。
+> 我们不调用 SDK，直接用原生 HTTP 访问 Anthropic Messages API；不依赖黑盒框架，所有模块自己掌控。
 
----
+### HTTP API 极简解读
+
+我们的客户端只做一件事：`POST /v1/messages`。
+
+**入参 (`CreateMessageRequest`)**：
+
+- `model` —— 模型 ID，如 `claude-sonnet-4-6`
+- `messages` —— 对话历史，每条消息含 `role` (user/assistant) 和 `content`。`content` 可以是纯文本，也可以是结构化数组（`text` / `tool_use` / `tool_result` 三种 block），这让工具调用的往返数据可以完整嵌入对话流
+- `max_tokens` —— 模型本次最多输出多少 token
+- `system` —— 系统提示，控制模型的行为基调
+- `tools` —— 可选的工具列表，每个工具定义 `name`、`description` 和 `input_schema`（JSON Schema）。模型根据描述自行判断何时调用
+
+**出参 (`MessageResponse`)**：
+
+- `content` —— 模型返回的 block 数组，可能是 `text`（直接回答）或 `tool_use`（要求执行工具）
+- `stop_reason` —— 停止原因。`tool_use` 表示模型想要调用工具，此时我们执行后把结果以 `tool_result` block 塞回 `messages`，再次请求；`end_turn` 表示模型认为任务完成，本轮结束
+- `usage` —— 本次请求的 input/output token 数，用于监控成本
+
+这就是全部。没有 SDK 的层层封装，请求和响应的结构一眼看穿。
 
 ## 为什么叫 dude？
 
