@@ -248,19 +248,6 @@ const skills = await SkillLoader.load(SKILLS_DIR);
 
 ---
 
-## 技术选型
-
-| 领域 | 选择 | 理由 |
-|------|------|------|
-| 运行时 | Node 20+ ESM | 原生 `fetch`、`node:` prefix、`tsx` 零配置运行 |
-| 类型检查 | TypeScript 5.7 strict | 全开 strict，编译时拦截错误 |
-| 校验 | Zod | 一份 schema，同时给 TS 类型 + 运行时校验 |
-| 格式化 | Biome | 单工具搞定 lint + format，比 ESLint+Prettier 快 |
-| 测试 | Vitest | 原生 ESM 支持，API 兼容 Jest |
-| API 调用 | 原生 `fetch` | 零依赖，自己掌控 request/response 全流程 |
-
----
-
 ## License
 
 MIT
