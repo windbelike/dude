@@ -8,10 +8,7 @@
 
 ## 为什么叫 dude？
 
-1. **反 corporate 气质** —— 不叫 Assistant、Copilot 或 Agent-Ω，叫 dude。它不是你的产品，是你的朋友/室友/bro。
-2. **The Dude abides** —— 致敬《谋杀绿脚趾》。The Dude 什么都不慌，随波逐流。你的 agent 也一样：你丢任务给它，它不焦虑，只是默默搞定。
-3. **个人助理的定位** —— dude 是你在 Slack 里 @ 的人，不是填工单申请的系统。casual、对等、随叫随到。
-4. **短小好打** —— 四个字母，`npm run dev` 启动的是一个叫 dude 的东西。符合这个项目「去掉一切多余依赖和包装」的极简哲学。
+dude 不是 Assistant、Copilot 那种 corporate 产品名，而是你在 Slack 里 @ 的朋友 —— casual、对等、随叫随到。四个字母，短小好打，也符合这个项目「去掉一切多余包装」的极简哲学。
 
 ---
 
